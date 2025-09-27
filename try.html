@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cemall - Virtual Shopping Mall</title>
+    <meta name="description" content="Virtual shopping mall with barber shops, ice cream parlors, clothing stores, restaurants and more">
+    <meta name="keywords" content="marketplace, B2B, B2C, Kenya, Africa, trade, import, export">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Cemall - Connect Africa's Marketplace">
+    <meta property="og:description" content="B2B/B2C marketplace for Kenya and Africa - Connect buyers and sellers globally">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cemall.africa">
+    
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cemall - Connect Africa's Marketplace">
+    <meta name="twitter:description" content="B2B/B2C marketplace for Kenya and Africa - Connect buyers and sellers globally">
+    
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1 class="brand-logo">Cemall</h1>
+            </div>
+            
+            <div class="nav-search">
+                <div class="search-container">
+                    <input type="text" placeholder="Search products, categories..." class="search-input">
+                    <button class="search-btn">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 21-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="btn btn-outline">Login</button>
+                <button class="btn btn-primary">Join as Seller</button>
+                <div class="cart-icon">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 9.5h9M16 14v7a1 1 0 01-1 1H9a1 1 0 01-1-1v-7"/>
+                    </svg>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Welcome to Cemall Virtual Mall</h1>
+                <p class="hero-subtitle">Explore different shops and services - from barber shops to ice cream parlors, clothing stores to restaurants. Click on any shop to start shopping!</p>
+                
+                <div class="hero-actions">
+                    <button class="btn btn-hero">Explore Shops</button>
+                    <button class="btn btn-marketplace">Open Your Shop</button>
+                </div>
+                
+                <div class="hero-search">
+                    <input type="text" placeholder="Search shops and products..." class="hero-search-input">
+                    <button class="hero-search-btn">Search</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mall Shops -->
+    <section class="featured-categories">
+        <div class="container">
+            <h2 class="section-title">Virtual Mall Shops</h2>
+            <div class="categories-grid">
+                <div class="category-card shop-card" data-shop="barber">
+                    <div class="category-icon">💇‍♂️</div>
+                    <h3>Barber Shop</h3>
+                    <p>Hair cuts & styling</p>
+                </div>
+                <div class="category-card shop-card" data-shop="icecream">
+                    <div class="category-icon">🍦</div>
+                    <h3>Ice Cream Parlor</h3>
+                    <p>Fresh ice cream & treats</p>
+                </div>
+                <div class="category-card shop-card" data-shop="clothing">
+                    <div class="category-icon">👕</div>
+                    <h3>Clothing Store</h3>
+                    <p>Fashion & apparel</p>
+                </div>
+                <div class="category-card shop-card" data-shop="restaurant">
+                    <div class="category-icon">🍽️</div>
+                    <h3>Restaurant</h3>
+                    <p>Delicious meals</p>
+                </div>
+                <div class="category-card shop-card" data-shop="cafe">
+                    <div class="category-icon">☕</div>
+                    <h3>Café</h3>
+                    <p>Coffee & pastries</p>
+                </div>
+                <div class="category-card shop-card" data-shop="furniture">
+                    <div class="category-icon">🛏️</div>
+                    <h3>Furniture Store</h3>
+                    <p>Beds & home furniture</p>
+                </div>
+                <div class="category-card shop-card" data-shop="electronics">
+                    <div class="category-icon">📱</div>
+                    <h3>Electronics Shop</h3>
+                    <p>Gadgets & devices</p>
+                </div>
+                <div class="category-card shop-card" data-shop="pharmacy">
+                    <div class="category-icon">💊</div>
+                    <h3>Pharmacy</h3>
+                    <p>Medicine & health products</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Shop Overlay -->
+<div id="shopOverlay" class="shop-overlay hidden">
+  <div class="shop-container">
+    <button class="shop-close" onclick="closeShop()">✕</button>
+    <div id="shopContent"></div>
+  </div>
+</div>
+
+<!-- Example Ice Cream Shop Card -->
+<div class="shop-card" data-shop="icecream">
+  <h3>🍦 Ice Cream Parlor</h3>
+  <p>Click to manage</p>
+</div>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="container">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1586182987320-962ac8b9be39?w=300&h=200&fit=crop" alt="Coffee Beans">
+                    </div>
+                    <div class="product-info">
+                        <h3>Premium Coffee Beans</h3>
+                        <p class="product-price">$25.00/kg</p>
+                        <p class="product-seller">by Kenya Coffee Co.</p>
+                        <button class="btn btn-primary btn-sm">Contact Seller</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?w=300&h=200&fit=crop" alt="Handcrafted Bags">
+                    </div>
+                    <div class="product-info">
+                        <h3>Handcrafted Leather Bags</h3>
+                        <p class="product-price">$45.00</p>
+                        <p class="product-seller">by Nairobi Crafts</p>
+                        <button class="btn btn-primary btn-sm">Contact Seller</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=300&h=200&fit=crop" alt="Fresh Produce">
+                    </div>
+                    <div class="product-info">
+                        <h3>Fresh Avocados</h3>
+                        <p class="product-price">$15.00/crate</p>
+                        <p class="product-seller">by Green Valley Farm</p>
+                        <button class="btn btn-primary btn-sm">Contact Seller</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?w=300&h=200&fit=crop" alt="African Textiles">
+                    </div>
+                    <div class="product-info">
+                        <h3>African Textiles</h3>
+                        <p class="product-price">$20.00/yard</p>
+                        <p class="product-seller">by Heritage Fabrics</p>
+                        <button class="btn btn-primary btn-sm">Contact Seller</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Overlay Container -->
+    <div id="shopOverlay" class="shop-overlay hidden">
+        <div class="shop-container">
+            <button class="shop-close" onclick="closeShop()">×</button>
+            <div id="shopContent" class="shop-content">
+                <!-- Shop content will be dynamically loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Cemall</h3>
+                    <p>Connecting Africa's marketplace for global trade and commerce.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>For Buyers</h4>
+                    <ul>
+                        <li><a href="#">Find Products</a></li>
+                        <li><a href="#">Contact Suppliers</a></li>
+                        <li><a href="#">Trade Assurance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>For Sellers</h4>
+                    <ul>
+                        <li><a href="#">Start Selling</a></li>
+                        <li><a href="#">Seller Center</a></li>
+                        <li><a href="#">Advertising</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Dispute Resolution</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Cemall. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
