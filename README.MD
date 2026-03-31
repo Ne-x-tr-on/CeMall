@@ -1,104 +1,222 @@
-
 # 🏬 Cemall – Community Enterprise Mall
 
-**Cemall** is a virtual community mall developed by **Neza**, designed to help **physical shops** digitize operations, sell online, manage branches, staff, and receive payments via **M-Pesa, Airtel Money, or bank transfers**—all without requiring customers to install any app.  
+**Cemall** is a hyperlocal digital mall that enables physical shops to go online, manage operations, and receive mobile payments without requiring customers to install an app.
 
-Cemall brings together multiple shops in one **hyperlocal digital mall**, giving small business owners access to new customers, delivery options, and online sales opportunities.  
+🌐 **Live Platform:** https://cemall.vercel.app
 
----
-
-## 🌟 Key Features
-
-- **Shop Creation**: Register physical shops (grocery, hardware, chemist, barber, clothing, electronics, etc.)  
-- **Branch Management**: Add multiple branches and manage them from a single dashboard  
-- **Online Sales**: Select which products/services to sell online  
-- **Delivery Options**: Customers can choose a nearby shop and request delivery  
-- **Hidden Pricing**: Shopkeepers can hide per-item prices while showing total checkout amount  
-- **Employee Roles**: Add staff to manage sales, deliveries, or cashier duties  
-- **Multi-Payment Integration**: Supports **M-Pesa, Airtel Money, and bank transfers**  
-- **Community Mall**: Multiple shops in a location form one unified mall, enhancing visibility  
+Cemall brings together multiple independent shops into one unified online mall where customers can browse, order, and pay using mobile money or bank transfers.
 
 ---
 
-## 📖 User Roles
+# 🌍 Vision
 
-| Role           | Capabilities                                                                 |
-|----------------|----------------------------------------------------------------------------|
-| Customer       | Browse shops/products, select branch, add to cart, choose delivery, pay, track orders |
-| Shop Admin     | Manage branches, products, staff, hide prices, view orders, connect payment channels |
-| Staff          | Limited access to process orders, update delivery status                    |
-| Super Admin    | Approve shops, manage categories, moderate content, view analytics         |
+To digitize local African commerce by providing small and medium businesses with an affordable, unified platform that connects them to online customers without technical complexity.
 
 ---
 
-## 📌 How It Works
+# 🚀 Key Features
 
-### Shopkeeper
-1. Registers their shop under Cemall.  
-2. Adds products and optionally hides per-item prices.  
-3. Connects their **M-Pesa, Airtel Money, or bank account**.  
-4. Adds staff for order processing and deliveries.  
-5. Manages branches and online/offline products.  
-
-### Customer
-1. Opens Cemall (web/mobile-friendly).  
-2. Searches for a shop or category.  
-3. Chooses a nearby shop branch.  
-4. Adds products/services to cart.  
-5. Pays via mobile money or bank.  
-6. Tracks order and receives delivery.  
+- 🏪 Register physical shops and create digital storefronts
+- 🧭 Manage multiple shop branches from one dashboard
+- 🛒 Sell products and services online
+- 🚚 Enable delivery from nearby branches
+- 🙈 Hide individual product prices if needed
+- 👥 Add staff accounts with role-based permissions
+- 💳 Accept M-Pesa, Airtel Money, and bank payments
+- 🏬 Operate inside a shared **community mall** for better visibility
 
 ---
 
-## 📌 Example Use Cases
+# 👥 User Roles
 
-- **Grocery Shop**: Lists fruits, vegetables, milk; delivers within 2 km; accepts mobile payments.  
-- **Barbershop**: Allows customers to book appointments; payment via mobile money or cash.  
-- **Chemist**: Hides individual product prices; total bill displayed at checkout.  
-- **Hardware Shop**: Sells online and in-store; manages multiple branches.  
-
----
-
-## 🔐 Payments Flow
-
-- Shopkeeper enters their **Till Number**, **Paybill**, or **Bank Account**.  
-- Customer pays via **M-Pesa/Airtel Money/Bank** directly to the shopkeeper.  
-- Cemall only records the transaction and updates order status.  
+| Role | Description |
+|------|-------------|
+| **Customer** | Browse shops, add items to cart, pay, and track deliveries |
+| **Shop Admin** | Manage products, branches, staff, and orders |
+| **Staff** | Process orders and update delivery status |
+| **Super Admin** | Approve shops, manage categories, and monitor platform |
 
 ---
 
-## 🏗 Tech Stack
+# ⚙️ How Cemall Works
 
-- **Frontend**: Next.js + TypeScript + TailwindCSS + shadcn/ui + lucide-react icons  
-- **Animations**: Framer Motion  
-- **Backend**: Rust (Axum) + PostgreSQL  
-- **Payments**: M-Pesa, Airtel Money, Banks  
-- **Hosting**: Dockerized microservices  
+## Shopkeeper Flow
 
----
+1. Register shop on Cemall
+2. Add products and services
+3. Optionally hide item prices
+4. Connect payment channels
+5. Add staff accounts
+6. Start receiving online orders
 
-## 📌 Future Plans
+## Customer Flow
 
-- Loyalty programs for frequent customers  
-- Shop-to-shop trade within Cemall  
-- AI-powered product recommendations  
-- Data analytics for shop performance  
-
----
-
-## 📌 Example Scenario
-
-Imagine 20 shops in a town:
-- 3 groceries  
-- 2 chemists  
-- 5 barbershops  
-- 4 hardware stores  
-- 6 fruit stalls  
-
-When they register under Cemall, they form a **hyperlocal digital mall**, allowing customers to browse multiple shops in one platform while maintaining their individual shop identity.  
+1. Open Cemall in browser
+2. Search for shops or products
+3. Select nearby branch
+4. Add items to cart
+5. Pay via mobile money or bank
+6. Track order and receive delivery
 
 ---
 
-# ✨ Cemall = The Future of Community Shopping
+# 🧾 Example Use Cases
 
-Cemall empowers small business owners in Africa to go digital **without the high cost of building separate apps**, and gives customers **a convenient, unified shopping experience** in their local area.
+## Grocery Shop
+Lists fruits, vegetables, and daily essentials and delivers locally.
+
+## Barbershop
+Allows appointment booking and mobile payment.
+
+## Chemist / Pharmacy
+Hides individual medicine prices while showing total bill.
+
+## Hardware Store
+Manages inventory across multiple branches and sells online.
+
+---
+
+# 💰 Payment Model
+
+Cemall does **not** hold customer funds.
+
+Payments go **directly to the shopkeeper**:
+
+- M-Pesa Till or Paybill
+- Airtel Money number
+- Bank account
+
+Cemall only records:
+- transaction reference
+- payment status
+- order completion
+
+This ensures:
+- faster settlements
+- reduced platform liability
+- increased trust for merchants
+
+---
+
+# 🏗 System Architecture
+
+```
+Customers (Browser)
+        │
+        ▼
+Cemall Frontend (Next.js)
+        │
+        ▼
+Rust API Server (Axum)
+        │
+        ├── Authentication & Roles
+        ├── Shop Management
+        ├── Orders & Delivery
+        ├── Payment Recording
+        │
+        ▼
+PostgreSQL Database
+```
+
+---
+
+# 🧰 Tech Stack
+
+## Frontend
+- Next.js
+- TypeScript
+- TailwindCSS
+- shadcn/ui
+- Framer Motion
+
+## Backend
+- Rust
+- Axum
+- PostgreSQL
+
+## Infrastructure
+- Dockerized services
+- Deployed frontend on Vercel
+
+---
+
+# 🏬 Hyperlocal Mall Concept
+
+Cemall groups multiple shops in a location into one digital mall:
+
+```
+Town → Cemall → All shops in one platform
+```
+
+Example:
+
+- 3 groceries
+- 2 chemists
+- 5 barbershops
+- 4 hardware stores
+- 6 fruit vendors
+
+Customers browse them all in one place while each shop keeps its own identity.
+
+---
+
+# 🔒 Security
+
+- Role-based access control
+- Shop-level data isolation
+- Secure storage of payment details
+- Audit logging for staff actions
+
+---
+
+# 📦 Core Modules
+
+- Shop Management
+- Branch Management
+- Product Catalog
+- Order Processing
+- Delivery Tracking
+- Payment Recording
+- User Authentication
+
+---
+
+# 🚀 Future Roadmap
+
+- Loyalty and rewards system
+- Business analytics dashboards
+- AI-powered product recommendations
+- Shop-to-shop wholesale marketplace
+- Inventory and supplier integrations
+
+---
+
+# 🎯 Target Users
+
+- Small retail shops
+- Informal market vendors
+- Community shopping centers
+- African towns with strong mobile money adoption
+
+---
+
+# 🌐 Live Demo
+
+Visit the live platform:
+
+https://cemall.vercel.app
+
+---
+
+# 🧑‍💻 Developed By
+
+**Neza**
+
+Building digital infrastructure for African commerce, logistics, and community ecosystems.
+
+---
+
+# 📄 License
+
+© 2026 Cemall – Community Enterprise Mall
+All rights reserved.
